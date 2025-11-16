@@ -2,5 +2,5 @@ using UnityEngine;
 
 public interface IInteractable
 {
-    public void OnInteract(GameObject interactor);
+    public void OnInteraction(PlayerController interactor);
 }

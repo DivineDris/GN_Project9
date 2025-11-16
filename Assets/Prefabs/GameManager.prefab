@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4574638323758803285
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1749131045438929221}
+  - component: {fileID: 8706621785496383148}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1749131045438929221
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4574638323758803285}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.70687, y: 1.01, z: -24.99}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8706621785496383148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4574638323758803285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9935218c71ee3b544bfa9d2172b06fce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  meshes:
+  - {fileID: -2432090755550338912, guid: 789b84f1b4ecae34798a0c00b5a347a4, type: 3}
+  - {fileID: -2432090755550338912, guid: 5f869d32c0a94c64db68f8ff7485bf77, type: 3}
+  - {fileID: -2432090755550338912, guid: 9e41ae1eb71f2d84da5f64fc7ddc4667, type: 3}
+  materialsPink:
+  - {fileID: 2100000, guid: bcfd35062cb3bea48ac57ac5d2d4a770, type: 2}
+  - {fileID: 2100000, guid: 1980b5dc49218b048b64611ed39aea4d, type: 2}
+  - {fileID: 2100000, guid: 96a5506956d720a4f893de243e14dc9f, type: 2}
+  materialsSky:
+  - {fileID: 2100000, guid: c5940d02152065343ab233eff2f8e544, type: 2}
+  - {fileID: 2100000, guid: adfd878742622ed4a966c13380dc344f, type: 2}
+  - {fileID: 2100000, guid: bf06bf5a3cd3d06469444d531b215c4f, type: 2}
+  materialsGreen:
+  - {fileID: 2100000, guid: af36f9b31c67f6f4ba72543666cdd472, type: 2}
+  - {fileID: 2100000, guid: 0c000fbff9ec5a04da45b5758242d70a, type: 2}
+  - {fileID: 2100000, guid: 2eb86619f71d8bc4c9eb5e77f1e6f37f, type: 2}

@@ -11,18 +11,24 @@ public class PlantingSite : MonoBehaviour, IInteractable
     void Start()
     {
         plantingSpot = transform.Find("PlantingSpot");
-        Plant();
     }
-    public void OnInteract(GameObject interactor)
-    {
-
-    }
-    public void Plant()
+    public void Plant(FlowerType flowerType)
     {
         flower.regionType = regionType;
+        flower.flowerType = flowerType;
         Instantiate(flower, plantingSpot.position, Quaternion.identity);
     }
 
+    public void OnInteraction(PlayerController interactor)
+    {
+        if (interactor == null) return;
+        if(interactor.heldObject == null) return;
+        else if(interactor.heldObject.GetSelectedObjectType() != SelectedObjectType.SeedPack) return;
+        else
+        {
+            Plant(((SeedPack)interactor.heldObject).flowerType);
+            Destroy(interactor.heldObject.gameObject);
+        }
 
-
+    }
 }
