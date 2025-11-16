@@ -33,7 +33,7 @@ public class Flower : MonoBehaviour, IInteractable
     private GameManager gameManager;
 
     [SerializeField]
-    private Transform Body;
+    private GameObject Body;
 
     [SerializeField]
     private Slime slimePrefab;
@@ -43,7 +43,7 @@ public class Flower : MonoBehaviour, IInteractable
     private void Start()
     {
         gameManager = FindAnyObjectByType<GameManager>();
-        Body = transform.Find("PlantBody");
+        Body = transform.Find("PlantBody").gameObject;
     }
 
     public void SpawnSlime()
@@ -67,10 +67,10 @@ public class Flower : MonoBehaviour, IInteractable
         else
         {
             fertilizerType = ((Fertilizer)interactor.heldObject).fertilizerType;
-            Body.localScale = new Vector3(Body.localScale.x, 1.5f, Body.localScale.z);
-            Destroy(Body);
+            Body.transform.localScale = new Vector3(Body.transform.localScale.x, 1.5f, Body.transform.localScale.z);
             Destroy(interactor.heldObject.gameObject);
             SpawnSlime();
+            Destroy(Body);
         }
     }
 }
