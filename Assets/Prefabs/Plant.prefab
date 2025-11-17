@@ -48,7 +48,22 @@ MonoBehaviour:
   flowerType: 2
   regionType: 1
   fertilizerType: 0
-  gameManager: {fileID: 0}
+  meshes:
+  - {fileID: -2432090755550338912, guid: 789b84f1b4ecae34798a0c00b5a347a4, type: 3}
+  - {fileID: -2432090755550338912, guid: 5f869d32c0a94c64db68f8ff7485bf77, type: 3}
+  - {fileID: -2432090755550338912, guid: 9e41ae1eb71f2d84da5f64fc7ddc4667, type: 3}
+  materialsPink:
+  - {fileID: 2100000, guid: bcfd35062cb3bea48ac57ac5d2d4a770, type: 2}
+  - {fileID: 2100000, guid: 1980b5dc49218b048b64611ed39aea4d, type: 2}
+  - {fileID: 2100000, guid: 96a5506956d720a4f893de243e14dc9f, type: 2}
+  materialsSky:
+  - {fileID: 2100000, guid: c5940d02152065343ab233eff2f8e544, type: 2}
+  - {fileID: 2100000, guid: adfd878742622ed4a966c13380dc344f, type: 2}
+  - {fileID: 2100000, guid: bf06bf5a3cd3d06469444d531b215c4f, type: 2}
+  materialsGreen:
+  - {fileID: 2100000, guid: af36f9b31c67f6f4ba72543666cdd472, type: 2}
+  - {fileID: 2100000, guid: 0c000fbff9ec5a04da45b5758242d70a, type: 2}
+  - {fileID: 2100000, guid: 2eb86619f71d8bc4c9eb5e77f1e6f37f, type: 2}
   Body: {fileID: 0}
   slimePrefab: {fileID: 2484195775474611096, guid: 916aed1edc3f4ac46b8e0802827d2cfd, type: 3}
 --- !u!1 &8113026392754439994
