@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -29,8 +30,6 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         cam = Camera.main;
-        //Cursor.lockState = CursorLockMode.None;
-        //Cursor.visible = true;
 
         controls = new InputSystem_Actions();
 
@@ -43,10 +42,8 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        //// Make sure all models start disabled
-        //modelFertilizerA.SetActive(false);
-        //modelFertilizerB.SetActive(false);
-        //modelFertilizerC.SetActive(false);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = false;
     }
 
 
@@ -61,33 +58,6 @@ public class PlayerController : MonoBehaviour
         controls.Player.Disable();
     }
     void Update(){
-        //if (Mouse.current.leftButton.wasPressedThisFrame)
-        //{
-        //    Ray ray = cam.ScreenPointToRay(Mouse.current.position.ReadValue());
-        //    RaycastHit hit;
-
-        //    if (Physics.Raycast(ray, out hit, interactDistance))
-        //    {
-        //        GameObject clicked = hit.collider.gameObject;
-
-        //        Fertilizer fert = clicked.GetComponent<Fertilizer>();
-        //        if (fert != null)
-        //        {
-        //            if (heldFertilizer == FertilizerType.NotDefined)
-        //            {
-        //                fert.OnClicked(this);
-        //            }
-        //            else
-        //            {
-        //                Debug.Log("You are already holding a fertilizer!");
-        //            }
-
-        //            return; 
-        //        }
-
-        //        //later add flow interactions
-        //    }
-        //}
 
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
@@ -96,6 +66,11 @@ public class PlayerController : MonoBehaviour
 
         HandleMovement();
         HandleMouseLook();
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("EndMenu");
+        }
 
     }
 

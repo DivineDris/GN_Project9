@@ -29,16 +29,13 @@ public class Flower : MonoBehaviour, IInteractable
     public RegionType regionType = RegionType.NotDefined;
     public FertilizerType fertilizerType = FertilizerType.NotDefined;
 
-    public Mesh[] meshes;
-    public Material[] materialsPink;
-    public Material[] materialsSky;
-    public Material[] materialsGreen;
+    public Slime[] pinkSlimes;
+    public Slime[] skySlimes;
+    public Slime[] greenSlimes;
 
     [SerializeField]
     private GameObject Body;
 
-    [SerializeField]
-    private Slime slimePrefab;
 
 
 
@@ -46,52 +43,42 @@ public class Flower : MonoBehaviour, IInteractable
     {
         Body = transform.Find("PlantBody").gameObject;
     }
-    public (Mesh, Material) GetModel(FlowerType flowerType, RegionType regionType)
+    public Slime GetModel(FlowerType flowerType, RegionType regionType)
     {
-        Mesh mesh;
-        Material[] materialPool;
+        Slime[] slimePool;
         switch (flowerType)
         {
             case FlowerType.Tulip:
-                mesh = meshes[0];
-                materialPool = materialsPink;
+                slimePool = pinkSlimes;
                 break;
             case FlowerType.Echivel:
-                mesh = meshes[1];
-                materialPool = materialsSky;
+                slimePool = skySlimes;
                 break;
             case FlowerType.LightFlower:
-                mesh = meshes[2];
-                materialPool = materialsGreen;
+                slimePool = greenSlimes;
                 break;
             default:
-                mesh = meshes[0];
-                materialPool = materialsPink;
+                slimePool = pinkSlimes;
                 break;
         }
 
         switch (regionType)
         {
             case RegionType.LushGreenPlain:
-                return (mesh, materialPool[0]);
+                return slimePool[0];
             case RegionType.Іcy:
-                return (mesh, materialPool[1]);
+                return slimePool[1];
             case RegionType.Desert:
-                return (mesh, materialPool[2]);
+                return slimePool[2];
             default:
-                return (mesh, materialPool[0]);
+                return slimePool[0];
         }
     }
     public void SpawnSlime()
     {
             Vector3 position = this.transform.position;
-            var go = Instantiate(slimePrefab, position, Quaternion.identity);
-            var slime = go.GetComponent<Slime>();
+            var go = Instantiate(GetModel(flowerType, regionType), position, Quaternion.identity);
 
-            var model = GetModel(flowerType,regionType);
-            slime.Setup(model.Item1, model.Item2);
-
-        Debug.Log("Slime prefab at runtime = " + slimePrefab);
     }
     public void OnInteraction(PlayerController interactor)
     {
