@@ -88,7 +88,6 @@ public class Flower : MonoBehaviour, IInteractable
         else
         {
             fertilizerType = ((Fertilizer)interactor.heldObject).fertilizerType;
-            Body.transform.localScale = new Vector3(Body.transform.localScale.x, 1.5f, Body.transform.localScale.z);
             Destroy(interactor.heldObject.gameObject);
             SpawnSlime();
             Destroy(Body);
